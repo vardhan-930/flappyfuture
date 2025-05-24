@@ -1,0 +1,36 @@
+# Cordova
+/platforms/
+/plugins/
+/hooks/
+
+# Node
+/node_modules/
+npm-debug.log
+yarn-error.log
+
+# Build files
+/www/build/
+/www/dist/
+
+# Keystore files
+*.keystore
+*.jks
+build.json
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Vercel
+.vercel

@@ -1,0 +1,33 @@
+## Required Cordova Plugins
+
+To ensure the game works properly as an Android app, you'll need to install these plugins:
+
+1. Insomnia Plugin (keeps screen on during gameplay):
+   ```
+   cordova plugin add cordova-plugin-insomnia
+   ```
+
+2. Status Bar Plugin (hides the status bar for fullscreen experience):
+   ```
+   cordova plugin add cordova-plugin-statusbar
+   ```
+
+3. Splash Screen Plugin (shows a splash screen while loading):
+   ```
+   cordova plugin add cordova-plugin-splashscreen
+   ```
+
+4. Device Plugin (for device information):
+   ```
+   cordova plugin add cordova-plugin-device
+   ```
+
+5. Media Plugin (for better audio support):
+   ```
+   cordova plugin add cordova-plugin-media
+   ```
+
+You can install all plugins at once with:
+```
+cordova plugin add cordova-plugin-insomnia cordova-plugin-statusbar cordova-plugin-splashscreen cordova-plugin-device cordova-plugin-media
+```

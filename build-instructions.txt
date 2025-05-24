@@ -1,0 +1,93 @@
+## Building Flappy Future APK
+
+To build the Flappy Future game as an Android APK, follow these steps:
+
+### Prerequisites
+
+1. Install Node.js and npm from https://nodejs.org/
+
+2. Install Apache Cordova:
+   ```
+   npm install -g cordova
+   ```
+
+3. Install Android Studio from https://developer.android.com/studio
+
+4. Set up Android SDK:
+   - Open Android Studio
+   - Go to Tools > SDK Manager
+   - Install Android SDK Platform-tools, Build-tools, and at least one Android platform (e.g., Android 11.0)
+
+5. Set up environment variables:
+   - ANDROID_HOME: path to your Android SDK
+   - JAVA_HOME: path to your JDK installation
+   - Add platform-tools and tools directories to PATH
+
+### Building the APK
+
+1. Navigate to the project directory:
+   ```
+   cd /path/to/flappy-bird
+   ```
+
+2. Add the Android platform:
+   ```
+   cordova platform add android
+   ```
+
+3. Check if your setup meets the requirements:
+   ```
+   cordova requirements
+   ```
+
+4. Build the APK:
+   ```
+   cordova build android
+   ```
+
+5. The APK file will be located at:
+   ```
+   /platforms/android/app/build/outputs/apk/debug/app-debug.apk
+   ```
+
+### Installing on an Android Device
+
+1. Enable Developer options and USB debugging on your Android device
+2. Connect your device to your computer via USB
+3. Run:
+   ```
+   cordova run android
+   ```
+
+### Creating a Release Version
+
+For a release version (signed APK):
+
+1. Create a keystore file:
+   ```
+   keytool -genkey -v -keystore flappy-future.keystore -alias flappy-future -keyalg RSA -keysize 2048 -validity 10000
+   ```
+
+2. Create a build.json file in the project root:
+   ```json
+   {
+     "android": {
+       "release": {
+         "keystore": "path/to/flappy-future.keystore",
+         "storePassword": "your-store-password",
+         "alias": "flappy-future",
+         "password": "your-key-password"
+       }
+     }
+   }
+   ```
+
+3. Build the release version:
+   ```
+   cordova build android --release
+   ```
+
+The release APK will be at:
+```
+/platforms/android/app/build/outputs/apk/release/app-release.apk
+```

@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "name": "flappy-future",
+  "builds": [
+    {
+      "src": "www/**",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/www/$1"
+    },
+    {
+      "src": "/",
+      "dest": "/www/index.html"
+    }
+  ]
+}
